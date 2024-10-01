@@ -1,0 +1,7 @@
+[package]
+name = "esm-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+fourcc = { git = "https://github.com/StealthOfKing/rust-fourcc.git", version = "0.2.2" }
