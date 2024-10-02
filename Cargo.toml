@@ -1,7 +1,11 @@
 [package]
-name = "esm-rs"
-version = "0.1.0"
+name = "esm-bindings"
+version = "0.2.0"
+authors = ["tRuTrIx <trutrix@monocyte.host>", "StealthOfKing <sok@monocyte.host>"]
 edition = "2021"
+description = "ESM struct bindings"
 
 [dependencies]
-fourcc = { git = "https://github.com/StealthOfKing/rust-fourcc.git", version = "0.2.2" }
+
+[build-dependencies]
+bindgen = "0.70"
