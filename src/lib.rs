@@ -4,6 +4,12 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
+pub mod fo3 {
+    pub mod timestamp;
+    pub use timestamp::Timestamp;
+}
+
 pub use fourcc::FourCC;
+pub use fo3::Timestamp;
 
 include!(concat!(env!("OUT_DIR"), "/fo3.rs"));
