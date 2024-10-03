@@ -24,4 +24,13 @@ typedef char typeid_t[4];
 /**
  * <div rustbindgen replaces="Timestamp"></div>
  */
-typedef char timestamp_t[2];
+typedef char timestamp16_t[2];
+
+/**
+ * <div rustbindgen replaces="VersionControlInfo"></div>
+ */
+typedef char version16_t[2];
+
+typedef uint32_t flags32_t;
+
+typedef uint32_t formid_t;

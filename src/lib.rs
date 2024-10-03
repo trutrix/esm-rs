@@ -7,9 +7,12 @@
 pub mod fo3 {
     pub mod timestamp;
     pub use timestamp::Timestamp;
+
+    pub mod version;
+    pub use version::VersionControlInfo;
 }
 
 pub use fourcc::FourCC;
-pub use fo3::Timestamp;
+pub use fo3::*;
 
 include!(concat!(env!("OUT_DIR"), "/fo3.rs"));

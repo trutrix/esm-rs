@@ -6,4 +6,7 @@
 #include "headers/group.h"
 #include "headers/record.h"
 
+#include "fields/HEDR.h"
+#include "fields/XNAM.h"
+
 #pragma pack(pop)
