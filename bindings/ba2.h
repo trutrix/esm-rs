@@ -31,7 +31,7 @@ struct TextureEntry {
     uint16_t texture_width;
     uint8_t mip_levels;
     uint8_t format;
-    ubool8_t is_cubemap;
+    bool8_t is_cubemap;
     uint8_t tile_mode;
 };
 
