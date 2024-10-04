@@ -34,3 +34,4 @@ typedef char version16_t[2];
 typedef uint32_t flags32_t;
 typedef uint32_t formid_t;
 typedef uint8_t rgba8_t[4];
+typedef uint8_t ubool8_t;
