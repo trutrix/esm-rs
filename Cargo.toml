@@ -1,9 +1,9 @@
 [package]
 name = "esm-bindings"
-version = "0.2.3"
+version = "0.2.4"
 authors = ["tRuTrIx <trutrix@monocyte.host>", "StealthOfKing <sok@monocyte.host>"]
 edition = "2021"
-description = "ESM struct bindings"
+description = "Elder Scrolls Master struct bindings"
 
 [dependencies]
 fourcc = { git = "https://github.com/StealthOfKing/rust-fourcc.git" }
