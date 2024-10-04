@@ -20,7 +20,6 @@ struct FileEntry {
     uint32_t unknown3;
 };
 
-
 struct TextureEntry {
     uint32_t filename_hash;
     uint32_t file_extension;
@@ -34,4 +33,13 @@ struct TextureEntry {
     uint8_t format;
     uint8_t is_cubemap;
     uint8_t tile_mode;
+};
+
+struct TextureChunk {
+    uint64_t offset;
+    uint32_t packed_size;
+    uint32_t unpacked_size;
+    uint16_t start_mip;
+    uint16_t end_mip;
+    uint32_t align;
 };
