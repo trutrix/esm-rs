@@ -31,7 +31,8 @@ typedef char timestamp16_t[2];
  */
 typedef char version16_t[2];
 
+typedef uint8_t bool8_t;
+typedef uint64_t hash_t;
 typedef uint32_t flags32_t;
 typedef uint32_t formid_t;
 typedef uint8_t rgba8_t[4];
-typedef uint8_t bool8_t;
