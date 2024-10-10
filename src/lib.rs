@@ -4,4 +4,5 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
+pub mod bsa;
 pub mod fo3;

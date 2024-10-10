@@ -1,5 +1,5 @@
 
-#include "../types.h";
+#include "./types.h";
 
 struct BA2Header {
     typeid_t type_id;
