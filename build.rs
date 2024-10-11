@@ -6,6 +6,7 @@ use std::path::PathBuf;
 fn generate_bindings(h: &str, rs: &str) {
     let bindings = bindgen::Builder::default()
         .header(h)
+        .default_enum_style(bindgen::EnumVariation::Rust { non_exhaustive: false })
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new())) // track header changes with cargo
         .generate()
         .expect("Unable to generate bindings");

@@ -1,7 +1,7 @@
 
 #include "../types.h"
 
-enum group_label_t {
+enum GroupLabel: uint32_t {
     Top = 0,
     WorldChildren = 1,
     InteriorCellBlock = 2,
@@ -19,7 +19,7 @@ struct GroupHeader {
     typeid_t type_id;
     uint32_t size;
     typeid_t label;
-    enum group_label_t type;
+    enum GroupLabel type;
     timestamp16_t timestamp;
     version16_t version;
     uint32_t unknown;
