@@ -36,3 +36,4 @@ typedef uint64_t hash_t;
 typedef uint32_t flags32_t;
 typedef uint32_t formid_t;
 typedef uint8_t rgba8_t[4];
+typedef int16_t cell_coord_t[2];

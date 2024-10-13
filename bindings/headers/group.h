@@ -1,24 +1,34 @@
 
 #include "../types.h"
 
+
+enum GroupLabelType: uint32_t {
+    Top = 0,
+    WorldChildren = 1,
+    ExteriorCellBlock = 2,
+    ExteriorCellSubBlock = 3,
+    InteriorCellBlock = 4,
+    InteriorCellSubBlock = 5,
+    CellChildren = 6,
+    TopicChildren = 7,
+    CellPersistantChildren = 8,
+    CellTemporaryChildren = 9,
+    CellVisibleDistantChildren = 10
+};
+
+struct group_label_t {
+    uint8_t group_value[4];
+    enum GroupLabelType group_type;
+};
+
 struct GroupHeader {
     typeid_t type_id;
     uint32_t size;
-    typeid_t label;
-    uint32_t type;
+    struct group_label_t label;
     timestamp16_t timestamp;
     version16_t version;
     uint32_t unknown;
 };
 
-const uint32_t TOP_GROUP = 0;
-const uint32_t WORLD_CHILDREN = 1;
-const uint32_t EXTERIOR_CELL_BLOCK = 2;
-const uint32_t EXTERIOR_CELL_SUB_BLOCK = 3;
-const uint32_t INTERIOR_CELL_BLOCK = 4;
-const uint32_t INTERIOR_CELL_SUB_BLOCK = 5;
-const uint32_t CELL_CHILDREN = 6;
-const uint32_t TOPIC_CHILDREN = 7;
-const uint32_t CELL_PERSISTANT_CHILDREN = 8;
-const uint32_t CELL_TEMPORARY_CHILDREN = 9;
-const uint32_t CELL_VISIBLE_DISTANT_CHILDREN = 10;
+
+

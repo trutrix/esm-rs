@@ -8,4 +8,7 @@ pub use version::VersionControlInfo;
 
 pub use fourcc::FourCC;
 
+pub mod label;
+pub use label::*;
+
 include!(concat!(env!("OUT_DIR"), "/fo3.rs"));
