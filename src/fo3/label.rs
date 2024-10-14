@@ -19,46 +19,44 @@ pub enum GroupLabel {
     CellVisibleDistantChildren(u32)
 }
 
-impl From<&GroupHeader> for GroupLabel {
-    fn from(value: &GroupHeader) -> Self {
-        match value.group_type {
+impl GroupHeader {
+    pub fn try_get_label(&self) -> Result<GroupLabel, String> {
+        match self.group_type {
             0 => {
-                GroupLabel::Top(FourCC::from(&value.group_value))
+                Ok(GroupLabel::Top(FourCC::from(&self.group_value)))
             }
             1 => {
-                GroupLabel::WorldChildren(u32::from_le_bytes(value.group_value))
+                Ok(GroupLabel::WorldChildren(u32::from_le_bytes(self.group_value)))
             }
             2 => {
-                GroupLabel::InteriorCellBlock(i32::from_le_bytes(value.group_value))
+                Ok(GroupLabel::InteriorCellBlock(i32::from_le_bytes(self.group_value)))
             }
             3 => {
-                GroupLabel::InteriorCellSubBlock(i32::from_le_bytes(value.group_value))
+                Ok(GroupLabel::InteriorCellSubBlock(i32::from_le_bytes(self.group_value)))
             }
             4 => {
-                GroupLabel::ExteriorCellBlock([i16::from_le_bytes(value.group_value[0..2].try_into().unwrap()), i16::from_le_bytes(value.group_value[2..4].try_into().unwrap())])
+                Ok(GroupLabel::ExteriorCellBlock([i16::from_le_bytes(self.group_value[0..2].try_into().unwrap()), i16::from_le_bytes(self.group_value[2..4].try_into().unwrap())]))
             }
             5 => {
-                GroupLabel::ExteriorCellSubBlock([i16::from_le_bytes(value.group_value[0..2].try_into().unwrap()), i16::from_le_bytes(value.group_value[2..4].try_into().unwrap())])
+                Ok(GroupLabel::ExteriorCellSubBlock([i16::from_le_bytes(self.group_value[0..2].try_into().unwrap()), i16::from_le_bytes(self.group_value[2..4].try_into().unwrap())]))
             }
             6 => {
-                GroupLabel::CellChildren(u32::from_le_bytes(value.group_value))
+                Ok(GroupLabel::CellChildren(u32::from_le_bytes(self.group_value)))
             }
             7 => {
-                GroupLabel::TopicChildren(u32::from_le_bytes(value.group_value))
+                Ok(GroupLabel::TopicChildren(u32::from_le_bytes(self.group_value)))
             }
             8 => {
-                GroupLabel::CellPersistentChildren(u32::from_le_bytes(value.group_value))
+                Ok(GroupLabel::CellPersistentChildren(u32::from_le_bytes(self.group_value)))
             }
             9 => {
-                GroupLabel::CellTemporaryChildren(u32::from_le_bytes(value.group_value))
+                Ok(GroupLabel::CellTemporaryChildren(u32::from_le_bytes(self.group_value)))
             }
             10 => {
-                GroupLabel::CellVisibleDistantChildren(u32::from_le_bytes(value.group_value))
+                Ok(GroupLabel::CellVisibleDistantChildren(u32::from_le_bytes(self.group_value)))
             }
-
-
             _ => {
-                panic!("Unknown group type: {:?}", value);
+                Err(format!("Unknown group type: {:?}", self))
             }
         }
     }
