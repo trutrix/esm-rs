@@ -1,8 +1,7 @@
-use std::io::Read;
 
 use fourcc::FourCC;
 
-use super::{cell_coord_t, group_label_t, GroupLabelType_ExteriorCellBlock};
+use super::GroupHeader;
 
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -20,8 +19,8 @@ pub enum GroupLabel {
     CellVisibleDistantChildren(u32)
 }
 
-impl From<group_label_t> for GroupLabel {
-    fn from(value: group_label_t) -> Self {
+impl From<&GroupHeader> for GroupLabel {
+    fn from(value: &GroupHeader) -> Self {
         match value.group_type {
             0 => {
                 GroupLabel::Top(FourCC::from(&value.group_value))
