@@ -22,7 +22,7 @@ struct GroupHeader {
     uint8_t group_value[4];
     enum GroupLabelType group_type;
     timestamp16_t timestamp;
-    version16_t version;
+    users16_t version;
     uint32_t unknown;
 };
 

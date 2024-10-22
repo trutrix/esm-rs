@@ -21,15 +21,9 @@ typedef double float64_t;
  */
 typedef char typeid_t[4];
 
-/**
- * <div rustbindgen replaces="Timestamp"></div>
- */
-typedef char timestamp16_t[2];
 
-/**
- * <div rustbindgen replaces="VersionControlInfo"></div>
- */
-typedef char version16_t[2];
+typedef char timestamp16_t[2];
+typedef char users16_t[2];
 
 typedef uint8_t bool8_t;
 typedef uint64_t hash_t;
