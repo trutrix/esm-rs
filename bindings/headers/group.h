@@ -1,6 +1,6 @@
 
 #include "../types.h"
-
+#include "./version.h"
 
 enum GroupLabelType: uint32_t {
     Top = 0,
@@ -21,9 +21,7 @@ struct GroupHeader {
     uint32_t size;
     uint8_t group_value[4];
     enum GroupLabelType group_type;
-    timestamp16_t timestamp;
-    users16_t version;
-    uint32_t unknown;
+    struct VersionControl version_control;
 };
 
 
