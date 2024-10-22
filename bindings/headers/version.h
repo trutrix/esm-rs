@@ -1,5 +1,7 @@
 #include "../types.h"
 
+#pragma once
+
 /**
  * <div rustbindgen replaces="VersionControl"></div>
  */
