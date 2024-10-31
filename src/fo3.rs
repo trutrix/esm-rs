@@ -11,4 +11,7 @@ pub use group_label::*;
 pub mod headers;
 pub use headers::*;
 
+pub mod record_flags;
+pub use record_flags::*;
+
 include!(concat!(env!("OUT_DIR"), "/fo3.rs"));

@@ -21,13 +21,18 @@ typedef double float64_t;
  */
 typedef char typeid_t[4];
 
+/**
+ * <div rustbindgen replaces="RecordFlags"></div>
+ */
+typedef uint32_t flags32_t;
+
 
 typedef char timestamp16_t[2];
 typedef char users16_t[2];
 
 typedef uint8_t bool8_t;
 typedef uint64_t hash_t;
-typedef uint32_t flags32_t;
+
 typedef uint32_t formid_t;
 typedef uint8_t rgba8_t[4];
 typedef int16_t cell_coord_t[2];
