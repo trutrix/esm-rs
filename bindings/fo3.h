@@ -2,6 +2,7 @@
 
 #pragma pack(push, 1)
 
+#include "types.h"
 #include "headers/field.h"
 #include "headers/group.h"
 #include "headers/record.h"
