@@ -15,7 +15,11 @@ impl std::fmt::Debug for RecordHeader {
 }
 
 impl RecordHeader {
-    pub fn get_flags(&self) -> RecordFlags {
+    pub fn flags(&self) -> RecordFlags {
         self.flags
+    }
+
+    pub fn has_flag(&self, flag: u32) -> bool {
+        self.flags().has_flag(flag)
     }
 }
